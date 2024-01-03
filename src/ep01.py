@@ -17,7 +17,7 @@ import pandas as pd
 
 # Importando dados com pandas
 df_candidatura = pd.read_csv('/home/medeiros/Documentos/PandasToTeo/data/tb_candidatura_2018.csv', sep=';')
-df_declaracao = pd.read_excel('/home/medeiros/Documentos/PandasToTeo/data/tb_declaracao_2018.xlsx')
+# df_declaracao = pd.read_excel('/home/medeiros/Documentos/PandasToTeo/data/tb_declaracao_2018.xlsx')
 
 # Exibe Nº primeiras linhas 
 df_candidatura.head(3)
@@ -31,7 +31,7 @@ df_candidatura.shape
 # Exibe colunas do DataFrame
 df_candidatura.columns
 
-# Navegando...
+# Navegando em DataFrames...
 
 df_candidatura[['ano_eleicao', 'nome', 'cpf']].head()
 
@@ -39,4 +39,8 @@ df_candidatura['nome'][4] # df[column][index]
 
 df_candidatura.info()
 
-df_candidatura.iloc[0:2]
+df_candidatura.iloc[2] # Série Pandas
+df_candidatura.iloc[0:2] # DataFrame Pandas
+
+df_candidatura['cpf']   # Série Pandas
+df_candidatura[['cpf']] # DataFrame
