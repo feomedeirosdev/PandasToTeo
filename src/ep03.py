@@ -81,4 +81,7 @@ df_presidente = (df_presidente
                  .sort_values(by=['numero_turno'])
                  .drop_duplicates(subset=['cpf'], keep='first'))
 
-df_presidente.where(df_presidente['descricao_situacao_candidatura'] == 'APTO')
+df_presidente = df_presidente.where(df_presidente['descricao_situacao_candidatura'] == 'APTO').dropna(how='all')  # Faz o mesmo que a linha de baixo
+df_presidente = df_presidente[df_presidente['descricao_situacao_candidatura'] == 'APTO'].copy() # Faz o mesmo que a linha de cima
+
+df_presidente[['nome', 'descricao_cor_raca']]
