@@ -142,6 +142,7 @@ print(df_filtrado['descricao_situacao_candidatura'].nunique()) # retorna quantid
 print(df_filtrado['descricao_situacao_candidatura'].unique()) # retorna quais valores distintos no campo 'descricao_situacao_candidatura' (no caso somente o valor 'APTO)
 print()
 
+# Descobrindo os partidos mais ricos (ladrões)
 df_partido = df_filtrado.groupby(['sigla_partido']).agg({'valor': ['sum', 'mean', 'median']})
-
-df_partido.sort_values([('valor', 'mean')])
+df_partido.sort_values([('valor', 'mean')], inplace=True, ascending=False)
+print(df_partido)
